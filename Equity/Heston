@@ -1,0 +1,48 @@
+https://fincad.com/resources/resource-library/article/heston-model-stochastic-volatility-fast-option-pricing-and
+
+In addition to this, different weights can be assigned to each individual option in one of three ways. The user might want to assign less weight to data for illiquid out-of-the-money options, for example, and more weight to the liquid at-the-money options.
+
+the choice of three calibration algorithms (Levenberg-Marquardt, downhill simplex and differential evolution)
+
+One recommendation is to use the differential evolution algorithm periodically and, at least if the market data have not changed too much, to use the Levenberg-Marquardt algorithm on a more frequent basis
+
+https://github.com/yungarjun/Heston-Stochastic-Volatility-Model/blob/main/heston_model_calibration.ipynb
+https://github.com/Jace-Yang/heston-model_pricing-formulas-and-calibration/blob/main/report_graded.ipynb
+
+#todo feller
+
+Next,basedonthendingsof Section1.4.1,wextwoparameters(initialvariancev0andmeanreversionκ)
+reference: chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://mpra.ub.uni-muenchen.de/26357/1/MPRA_paper_26357.pdf
+Note,thatthetisverygoodforintermediate andlongmaturities(threemonthsandmore).Unfortunately,theHestonmodel doesnotperformsatisfactorilyforshortmaturities(seeSection1.5.2fora discussionofalternativeapproaches).
+
+ there is 'in-model' vega and 'out-model' vega.
+file:///Users/jivitesh/Downloads/final_thesis.pdf
+by practioners.
+3.2 Characteristic function of TS Heston model with piecewise constant
+parameters
+Despite its popularity, the Heston model also has its own limitations. Since the coecients
+of the characteristic function are solutions of ordinary dierential equations of Riccati type,
+most of the parameters cannot be time-dependent if we want the coecients to be analytic.
+This however causes a problem if we want to calibrate to options of dierent maturities. For
+each maturity, we may get completely dierent sets of parameters, and what is more, the
+initial variance may disagree as well.
+
+https://github.com/yungarjun/Heston-Stochastic-Volatility-Model/blob/main/README.md
+
+1
+Heston extensions such as adding jumps helps to better models options
+with short-dated maturities e.g. Bates model Electronic copy available at: https://ssrn.
+
+# todo check if fitted params make sense.... 1) check fit stats  2) check output stats from fx
+
+#todo understand parameter effects
+
+
+ #todo parameter comparison Equity vs FX
+    # correltion of -1  negative slope, 0 correlation full smile (starting point), 1 Correlation postive skew (commodity),,, near 0 for fx long term
+    # eta (vol of variance) of 0 => flat'sh smile,    eta of 1 more smile  more than 1 => sharp non differentiable smile.. around 0.35 for FX, 0 error
+    # theta (variance mean revert) < 0 error. Moves the whole smile with ATM.has to be positive. Lower(0.001=> 0.0001) variance bring ATM lower along with smile.. Higher (0.015) move ATM up and smile starts flatenning, even higher moves ATM higher and flat skew as mean rever is highrt...  Use historical variance as benchmark .. eg here 0.07**2 ==0.0049.. wings approach the mean variance
+    # k (speed):  negative error..  Lower (0.001) bring ATM lower and smile more pronounced, prob cause takes slow speed to get to mean...   Very high value (10) makes all smile flat since all mean reverts ... around 0.8 gives normal curve
+    # V0 (initial variance): negative error..  Lower (0.000001) brings ATM terms structure more +ve inclined as further term approach faster to mean.. very high number inverts the ts as starting point is high.. flat if increases ... best calibrated to todays vol.. eventually reverts to mean
+
+

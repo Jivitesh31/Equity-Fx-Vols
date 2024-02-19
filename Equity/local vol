@@ -1,0 +1,32 @@
+To compute the local volatility at each moneyness and maturity I had first to interpolate the IV surface ensuring no arbitrage is present. This means absence of negative calendar spreads and butterfly spread. To do so I have tried several approaches and ultimately went for a cubic spline interpolation. Once the volatiltiy surface had been correctly interpolated I have used the implied volatility formula proposed by Gatheral in terms of log-moneyness
+
+    https://github.com/Tabboch/Local-Volatility-Surface
+
+
+
+interpolation/extrapolation
+todo: add regression line
+: Cubic with flat extrapolation? not stable todo
+functions = ['cubic', 'gaussian', 'inverse_multiquadric', 'linear', 'multiquadric', 'quintic', 'thin_plate']
+
+thin_plate,   multiquadric  : compare screesnshots
+interpolate with cubic and extraploate multiquadric?
+
+P&L analysis
+
+Analysis/Issues:
+Very unstable derivs for choice of strike. larger K more stable
+
+
+most problematic is short term
+
+#todo check extrapolation
+
+interpolation:
+2200 5000
+1600 5400
+1200 5600
+700 5900
+600 6000
+
+Without forward local and implied vols not continuous

@@ -1,0 +1,15 @@
+
+
+Dupire, SVI, Heston
+LSV
+
+Optimizaton => Newton, secant, bisection, breant,  Pythonic
+interpolation => splines, SABR, SVI (limitations), Machine Learning (Neural Network)
+functions = ['cubic', 'gaussian', 'inverse_multiquadric', 'linear', 'multiquadric', 'quintic', 'thin_plate']
+Numerical Methods => Tree, MC, PDE
+
+Arbitrage Checks
+To construct an arbitrage free surface we have to respect two conditions: absence of negative calendar spread and absence of negative butterflies
+
+
+Greeks dynamics

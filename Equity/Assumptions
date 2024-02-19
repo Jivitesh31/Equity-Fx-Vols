@@ -1,0 +1,39 @@
+1. ignore 0 Bids
+2. use OTM only
+3. use MID only
+4. discard strikes with 0 vega
+Act/365
+Sticky strike spot vol dynamics
+
+Syntax, cleaning
+Initial guess of 0.3
+Alternate for initial guess np.sqrt(2*np.pi/T)*Price/S
+
+todo wing vols?
+
+Root finding methods:
+Newtons, Secant, Bisection, Brents?
+https://math.stackexchange.com/questions/1464795/what-are-the-difference-between-some-basic-numerical-root-finding-methods
+
+todo:
+round trip calibration
+dividends,discount factors?
+
+
+
+??
+https://github.com/wangys96/SVI-Volatility-Surface-Calibration
+Reference
+[1] J. Gatheral. A parsimonious arbitrage-free implied volatility parameterization with application to the valuation of volatility derivatives. Global Derivatives & Risk
+[2] Zeliade Systems, Quasi-explicit calibration of Gatheral's SVI model, Zeliade white paper, 2009.
+[3] Gatheral J. Lecture 2: The SVI arbitrage-free volatility surface parameterization. CFM-Imperial Distinguished Lecture Series, 2015.
+
+
+BS:
+https://www.codearmo.com/blog/implied-volatility-european-call-python
+
+
+natural cubic spline => linear extrapolation at ends
+
+
+A continuity correction for discrete barrier options". adjustment is: multiply your barrier B by exp(+/-0.5826*sigma*SQRT(T/num_steps))
